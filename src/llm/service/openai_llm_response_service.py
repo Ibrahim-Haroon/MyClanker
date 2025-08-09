@@ -24,7 +24,7 @@ class OpenAILlmResponseService(LlmResponseService):
             self,
             role: str,
             prompt: str,
-            conversation_history: Optional[List[LlmMessage]],
+            conversation_history: Optional[List[LlmMessage]] = None,
             timeout: Optional[int] = None
     ) -> str:
         payload = {
