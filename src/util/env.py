@@ -8,7 +8,7 @@ class Env:
     def __init__(self):
         load_dotenv(
             dotenv_path=path.join(path.dirname(path.realpath(__file__)),
-                                  "../..", "local-config.env")
+                                  "../..", ".env")
         )
         self.__env = {}  # type: dict[str, str | None]
 
