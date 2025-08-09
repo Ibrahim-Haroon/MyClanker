@@ -21,7 +21,7 @@ class SearchAgent(Agent):
             prompt=LlmTemplate.web_search_query(task),
         )
 
-        res = SearchService.search(
+        res = SearchService().search(
             query=query,
             city="San Francisco",
             region="San Francisco Bay Area"
