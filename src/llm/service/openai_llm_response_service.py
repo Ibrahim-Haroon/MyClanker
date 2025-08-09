@@ -22,7 +22,8 @@ class OpenAILlmResponseService(LlmResponseService):
     @override
     def response(
             self,
-            role: str, prompt: str,
+            role: str,
+            prompt: str,
             conversation_history: Optional[List[LlmMessage]],
             timeout: Optional[int] = None
     ) -> str:
