@@ -1,7 +1,7 @@
-from textwrap import dedent
 import requests
+from textwrap import dedent
+from src.agent.web_search_cleaner_agent import WebSearchCleanerAgent
 from src.llm.service.openai_llm_response_service import OpenAILlmResponseService
-from src.llm.template.llm_template import LlmTemplate
 from src.service.search_parser_service import SearchParserService, BusinessDirectory
 from src.util.env import Env
 
@@ -67,9 +67,6 @@ class SearchService:
 
     @staticmethod
     def parse_web_results(response) -> BusinessDirectory:
-        res = OpenAILlmResponseService().response(
-            role="You are a data-cleaning agent that creates structured json objects",
-            prompt=LlmTemplate.web_search_parser(response),
-        )
+        res = WebSearchCleanerAgent(OpenAILlmResponseService()).execute(response)
 
         return SearchParserService().clean(res)
