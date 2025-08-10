@@ -9,6 +9,10 @@ The system combines conversational AI, search capabilities, and a voice-based bo
 
 MyClanker can search web shops and local businesses nearby, find what you need, and complete the booking for you.
 
+## Frontend
+
+[clanker-frontend](https://github.com/JonCGroberg/clanker-frontend)
+
 ## Pipeline Flow
 
 1. User Initiates Booking (iMessage Interface). The process begins when a user sends a booking request via iMessage, such as “Book me a haircut for Monday or Tuesday afternoon”. This message is handled by the Conversation Agent, powered by a chat model.
