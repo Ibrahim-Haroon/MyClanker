@@ -4,6 +4,7 @@ from flask_cors import CORS
 from src.util.logging_config import setup_logging
 from src.rest.api.clanker_api import clanker_routes
 from src.util.env import Env
+from app.app import register_vapi_routes
 
 
 class MyClanker:
@@ -18,6 +19,8 @@ class MyClanker:
         """Configure Flask application with middleware and routes"""
         CORS(self.__app)
         clanker_routes(self.__app)
+        # Register Vapi routes under the same app
+        register_vapi_routes(self.__app)
 
     def run(self):
         self.__app.run(
